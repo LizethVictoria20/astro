@@ -6,6 +6,6 @@ import icon from 'astro-icon';
 // https://astro.build/config
 export default defineConfig({
   integrations: [icon()],
-  site: 'https://djkhaled.github.io/astro-workshop/'
+  site: 'https://github.com/LizethVictoria20/astro'
 });
 
