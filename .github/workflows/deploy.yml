@@ -1,0 +1,28 @@
+name: Deploy pages
+
+on: 
+  push: 
+  branches: [ main ]
+
+jobs: 
+  build: 
+    runs-on: ubuntu-latest
+
+    steps: 
+      - name: checkout repo
+          uses: actions/checkout@v5
+      - name: Install, build, and deploy
+          uses: withastro/action@v5
+  
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    envieroment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
