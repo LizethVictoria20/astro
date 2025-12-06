@@ -6,6 +6,8 @@ import icon from 'astro-icon';
 // https://astro.build/config
 export default defineConfig({
   integrations: [icon()],
-  site: 'https://github.com/LizethVictoria20/astro'
+  site: "https://lizethvictoria20.github.io",
+  base: "/astro",
 });
 
+  
